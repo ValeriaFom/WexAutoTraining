@@ -52,8 +52,6 @@ namespace WexAutoTraining
 
             //Console.WriteLine("Min and Max values for long = {0} {1}", longMin, longMax);
 
-            Console.WriteLine($"Min and Max values for long = {long.MinValue} {long.MaxValue}");
-
             //ulong ulongMin = ulong.MinValue;
             //ulong ulongMax = ulong.MaxValue;
 
@@ -69,6 +67,15 @@ namespace WexAutoTraining
 
             //Console.WriteLine("Min and Max values for double = {0} {1}", doubleMin, doubleMax);
 
+            Console.WriteLine($"Min and Max values for byte = {byte.MinValue} {byte.MaxValue}");
+            Console.WriteLine($"Min and Max values for short = {short.MinValue} {short.MaxValue}");
+            Console.WriteLine($"Min and Max values for int = {int.MinValue} {int.MaxValue}");
+            Console.WriteLine($"Min and Max values for uint = {uint.MinValue} {uint.MaxValue}");
+            Console.WriteLine($"Min and Max values for long = {long.MinValue} {long.MaxValue}");
+            Console.WriteLine($"Min and Max values for ulong = {ulong.MinValue} {ulong.MaxValue}");
+            Console.WriteLine($"Min and Max values for float = {float.MinValue} {float.MaxValue}");
+            Console.WriteLine($"Min and Max values for double = {double.MinValue} {double.MaxValue}\n");
+            
 
             //Homework 2
             //Создать массив размером 10 элементов, заполнить его квадратами индексов (в цикле), и вывести его содержимое на экран
@@ -111,7 +118,6 @@ namespace WexAutoTraining
             //    Console.WriteLine(index + " element = " + cubed[index]);
             //}
             //Console.WriteLine("Average = " + GetAverage(cubed) + "\n");
-
 
             int[] marks = new int[10];
             for (int i = 1; i <= 3; i++)
