@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WexAutoTraining", "WexAutoTraining\WexAutoTraining.csproj", "{96AF3E4C-32E5-49CF-8A15-398DD1EE351B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework1_Min_MaxValues", "WexAutoTraining\Homework1_Min_MaxValues.csproj", "{96AF3E4C-32E5-49CF-8A15-398DD1EE351B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5_ClassBook", "Homework5\Homework5_ClassBook.csproj", "{E2A7A61D-6469-42C3-9837-6CDD4674EA27}"
 EndProject
@@ -14,6 +14,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7_Interfaces", "Homework7_Interfaces\Homework7_Interfaces.csproj", "{D3D5219A-CDF9-4950-8875-4F297C99F626}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework8_IComparer", "Homework8_IComparer\Homework8_IComparer.csproj", "{5F00E568-120D-4ECB-BBD3-110A6ACA982F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{104244A4-80BA-40C2-AB65-E283320315C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{104244A4-80BA-40C2-AB65-E283320315C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{104244A4-80BA-40C2-AB65-E283320315C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{104244A4-80BA-40C2-AB65-E283320315C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
