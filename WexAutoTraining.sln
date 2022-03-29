@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WexAutoTraining", "WexAutoTraining\WexAutoTraining.csproj", "{96AF3E4C-32E5-49CF-8A15-398DD1EE351B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5_ClassBooks", "Homework5\Homework5_ClassBooks.csproj", "{E2A7A61D-6469-42C3-9837-6CDD4674EA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5_ClassBook", "Homework5\Homework5_ClassBook.csproj", "{E2A7A61D-6469-42C3-9837-6CDD4674EA27}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework4_ChangeMaxMinValues", "Homework4\Homework4_ChangeMaxMinValues.csproj", "{743C1DAF-6BFA-4D97-A127-98E795B25CFD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework6_AbstractClassAndMethod", "Homework6\Homework6_AbstractClassAndMethod.csproj", "{5A341486-9054-45AF-B7CE-D56D890CD5F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7_Interfaces", "Homework7_Interfaces\Homework7_Interfaces.csproj", "{D3D5219A-CDF9-4950-8875-4F297C99F626}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework8_IComparer", "Homework8_IComparer\Homework8_IComparer.csproj", "{5F00E568-120D-4ECB-BBD3-110A6ACA982F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{743C1DAF-6BFA-4D97-A127-98E795B25CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{743C1DAF-6BFA-4D97-A127-98E795B25CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{743C1DAF-6BFA-4D97-A127-98E795B25CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A341486-9054-45AF-B7CE-D56D890CD5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A341486-9054-45AF-B7CE-D56D890CD5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A341486-9054-45AF-B7CE-D56D890CD5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A341486-9054-45AF-B7CE-D56D890CD5F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

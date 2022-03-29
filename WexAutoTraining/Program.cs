@@ -8,7 +8,7 @@ namespace WexAutoTraining
         { 
             for (int index = 0; index < array.Length; index++)
             {
-                array[index] = (int)Math.Pow(index, degree);               
+                array[index] = (int)Math.Pow(index, degree);  // возведение в степень           
             }
         }
 
@@ -19,7 +19,7 @@ namespace WexAutoTraining
             {
                 sum += array[i]; // sum = sum + array[i]
             }
-            return (sum / array.Length);
+            return ((float)sum / array.Length);
         }
 
         static void Main(string[] args)
@@ -42,8 +42,6 @@ namespace WexAutoTraining
 
             //Console.WriteLine("Min and Max values for int = {0} {1}", intMin, intMax);
 
-            ////long, float, double, uint, ulong.
-
             //uint uintMin = uint.MinValue;
             //uint uintMax = uint.MaxValue;
 
@@ -53,6 +51,8 @@ namespace WexAutoTraining
             //long longMax = long.MaxValue;
 
             //Console.WriteLine("Min and Max values for long = {0} {1}", longMin, longMax);
+
+            Console.WriteLine($"Min and Max values for long = {long.MinValue} {long.MaxValue}");
 
             //ulong ulongMin = ulong.MinValue;
             //ulong ulongMax = ulong.MaxValue;
@@ -73,49 +73,56 @@ namespace WexAutoTraining
             //Homework 2
             //Создать массив размером 10 элементов, заполнить его квадратами индексов (в цикле), и вывести его содержимое на экран
 
-            //int[] squared = new int[10];
+            int[] squared = new int[10];
 
-            //for (int index = 0; index < squared.Length; index++)
-            //{
-            //    squared[index] = index * index;
-            //    Console.WriteLine(index + " element = " + squared[index]);
-            //}
+            for (int index = 0; index < squared.Length; index++)
+            {
+                squared[index] = index * index;
+                Console.WriteLine(index + " element = " + squared[index]);
+            }
+
 
             //Homework 3
             //Cоздать три массива по 10 элементов, первый заполнить значениями индексов элементов, второй - квадратами индексов, третий-кубами, и вывести на экран средние значения элементов для всех массивов
 
-            int[] indexes = new int[10];
-            CreateArray(indexes, 1);
-            foreach (int item in indexes)
-            {
-                Console.WriteLine("Element = " + item);
-            }
-            Console.WriteLine("Average = " + GetAverage(indexes));
+            //int[] indexes = new int[10];
+            //CreateArray(indexes, 1);
 
-            int[] squared = new int[10];
-            CreateArray(squared, 2);
-            foreach (int item in squared)
-            {
-                Console.WriteLine("Element = " + item);
-            }
-            Console.WriteLine("Average = " + GetAverage(squared));
-
-            int[] cubed = new int[10];
-            CreateArray(cubed, 3);
-            foreach (int item in cubed)
-            {
-                Console.WriteLine("Element = " + item);
-            }
-            Console.WriteLine("Average = " + GetAverage(cubed));
-
-            //Console.WriteLine(index + " element = " + array[index]);
-
-            //int[] marks = new int[10];
-            //for (int i = 1; i <= 3; i++)
+            //foreach (int item in indexes)
             //{
-            //    CreateArray(marks, 1);
-            //    Console.WriteLine(GetAverage(marks));
+            //    Console.WriteLine("Element = " + item);
             //}
+            //Console.WriteLine("Average = " + GetAverage(indexes) + "\n");
+
+            //int[] squared = new int[10];
+            //CreateArray(squared, 2);
+
+            //foreach (int item in squared)
+            //{
+            //    Console.WriteLine("Element = " + item);
+            //}
+            //Console.WriteLine("Average = " + GetAverage(squared) + "\n");
+
+            //int[] cubed = new int[10];
+            //CreateArray(cubed, 3);
+
+            //for (int index = 0; index < cubed.Length; index++)
+            //{
+            //    Console.WriteLine(index + " element = " + cubed[index]);
+            //}
+            //Console.WriteLine("Average = " + GetAverage(cubed) + "\n");
+
+
+            int[] marks = new int[10];
+            for (int i = 1; i <= 3; i++)
+            {
+                CreateArray(marks, i);
+                for (int index = 0; index < marks.Length; index++)
+                {
+                    Console.WriteLine(index + " element = " + marks[index]);
+                }
+                Console.WriteLine("Average = " + GetAverage(marks) + "\n");
+            }
 
         }
     }
