@@ -21,12 +21,7 @@ namespace Homework6_AbstractClassAndMethod
 
             foreach (Customer item in allCustomers)
             {
-                item.Pay();
-                               
-                //if (item is not (CustomerWithCash or CustomerWithCreditCard or CustomerWithDebitCard))
-                //{
-                //    Console.WriteLine("Tell the customer: \"Sorry, we can’t sell you this item. Please come back when you have a sufficient amount of money.\"");
-                //}
+                item.Pay();                
             }
         }
     }
