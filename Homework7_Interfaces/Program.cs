@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
+using Homework7and8_Interfaces_IComparer.Comparers;
 
-namespace Homework7_Interfaces
+namespace Homework7and8_Interfaces_IComparer
 {
     class Program
     {
@@ -19,16 +19,16 @@ namespace Homework7_Interfaces
 
             Office issoft = new Office();
 
-            issoft.Employees.Add(new DevTeamLead { firstName = "Elon", lastName = "Musk", jobTitle = "Developer/Team Lead", taxID = 1});
-            issoft.Employees.Add(new DevEmployee { firstName = "Guy", lastName = "Ritchie", jobTitle = "Developer", taxID = 2});
-            issoft.Employees.Add(new DevEmployee { firstName = "Bob", lastName = "Marley", jobTitle = "Developer", taxID = 3});
-            issoft.Employees.Add(new QATeamLead { firstName = "Natalia", lastName = "Soyko", jobTitle = "QA Engineer/Team Lead", taxID = 4});
-            issoft.Employees.Add(new QAEmployee { firstName = "Valeria", lastName = "Klimentieva", jobTitle = "QA Engineer", taxID = 5});
-            issoft.Employees.Add(new QAEmployee { firstName = "Olga", lastName = "Kraskova", jobTitle = "QA Engineer", taxID = 6});
-            issoft.Employees.Add(new QAAutomationTeamLead { firstName = "Alexander", lastName = "Savenok", jobTitle = "QA Auto Engineer/Team Lead", taxID = 7});
-            issoft.Employees.Add(new QAAutomationEmployee { firstName = "Julia", lastName = "Dantsevich", jobTitle = "QA Auto Engineer", taxID = 8});
-            issoft.Employees.Add(new BAEmployee { firstName = "Nastya", lastName = "Toporova", jobTitle = "Business Analysist", taxID = 9});
-            issoft.Employees.Add(new PMEmployee { firstName = "Olga", lastName = "Rutskaya", jobTitle = "Project Manager", taxID = 10});
+            issoft.Employees.Add(new DevTeamLead { FirstName = "Elon", LastName = "Musk", jobTitle = "Developer/Team Lead", TaxID = 1});
+            issoft.Employees.Add(new DevEmployee { FirstName = "Guy", LastName = "Ritchie", jobTitle = "Developer", TaxID = 2});
+            issoft.Employees.Add(new DevEmployee { FirstName = "Bob", LastName = "Marley", jobTitle = "Developer", TaxID = 3});
+            issoft.Employees.Add(new QATeamLead { FirstName = "Natalia", LastName = "Soyko", jobTitle = "QA Engineer/Team Lead", TaxID = 4});
+            issoft.Employees.Add(new QAEmployee { FirstName = "Valeria", LastName = "Klimentieva", jobTitle = "QA Engineer", TaxID = 5});
+            issoft.Employees.Add(new QAEmployee { FirstName = "Olga", LastName = "Kraskova", jobTitle = "QA Engineer", TaxID = 6});
+            issoft.Employees.Add(new QAAutomationTeamLead { FirstName = "Alexander", LastName = "Savenok", jobTitle = "QA Auto Engineer/Team Lead", TaxID = 7});
+            issoft.Employees.Add(new QAAutomationEmployee { FirstName = "Julia", LastName = "Dantsevich", jobTitle = "QA Auto Engineer", TaxID = 8});
+            issoft.Employees.Add(new BAEmployee { FirstName = "Nastya", LastName = "Toporova", jobTitle = "Business Analysist", TaxID = 9});
+            issoft.Employees.Add(new PMEmployee { FirstName = "Olga", LastName = "Rutskaya", jobTitle = "Project Manager", TaxID = 10});
 
             Console.WriteLine($"\nWho can write a code:");
             foreach (Employee employee in issoft.Employees)
@@ -54,6 +54,52 @@ namespace Homework7_Interfaces
                 if (employee is ICodeReviewer)
                 {
                     Console.WriteLine(employee.ToString());
+                }
+            }
+
+            //Homework 8.
+            //Задача для всех - отсортируйте и выведите в консоль сотрудников по: 
+            //1.Имени
+            //2.TaxID
+            //3.Общей длине имени и фамилии
+            //4 * Умению ассанить таски-ITaskAssigner сначала(их дополнительно отсортировать по фамилии), потом все остальные
+
+            issoft.Employees.Sort(new FirstNameComparer());
+            Console.WriteLine($"\nEmployees sorted by First Name:"); //почему показывается employee.ToString() в консоли?
+            foreach (Employee employee in issoft.Employees)
+            {
+                Console.WriteLine(employee);
+            }
+
+            issoft.Employees.Sort(new TaxIDComparer());
+            Console.WriteLine($"\nEmployees sorted by Tax ID:");
+            foreach (Employee employee in issoft.Employees)
+            {
+                Console.WriteLine(employee);
+            }
+
+            issoft.Employees.Sort(new FullNameLengthComparer());
+            Console.WriteLine($"\nEmployees sorted by Full Name:");
+            foreach (Employee employee in issoft.Employees)
+            {
+                Console.WriteLine(employee);
+            }
+            
+            issoft.Employees.Sort();
+            Console.WriteLine($"\nEmployees - task assigners, sorted by Last Name, and then the others:");
+            foreach (Employee employee in issoft.Employees)
+            {
+                if (employee is ITaskAssigner)
+                {
+                    Console.WriteLine(employee);
+                }
+            }
+            Console.WriteLine("----------");
+            foreach (Employee employee in issoft.Employees)
+            {
+                if (employee is not ITaskAssigner)
+                {
+                    Console.WriteLine(employee);
                 }
             }
         }

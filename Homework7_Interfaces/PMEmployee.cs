@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework7_Interfaces
+namespace Homework7and8_Interfaces_IComparer
 {
     class PMEmployee : Employee, ITaskAssigner
     {
