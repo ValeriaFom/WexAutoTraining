@@ -1,5 +1,6 @@
 ﻿using System;
 using Homework7and8_Interfaces_IComparer.Comparers;
+using System.Linq;
 
 namespace Homework7and8_Interfaces_IComparer
 {
@@ -65,22 +66,22 @@ namespace Homework7and8_Interfaces_IComparer
             //4 * Умению ассанить таски-ITaskAssigner сначала(их дополнительно отсортировать по фамилии), потом все остальные
 
             issoft.Employees.Sort(new FirstNameComparer());
-            Console.WriteLine($"\nEmployees sorted by First Name:"); //почему показывается employee.ToString() в консоли?
+            Console.WriteLine($"\nEmployees sorted by First Name:");   //почему показывается employee.ToString() в консоли?
             foreach (Employee employee in issoft.Employees)
             {
                 Console.WriteLine(employee);
-            }
+            }            
 
-            issoft.Employees.Sort(new TaxIDComparer());
+            var employeesOrderedByTaxID = issoft.Employees.OrderBy(x => x.TaxID);
             Console.WriteLine($"\nEmployees sorted by Tax ID:");
-            foreach (Employee employee in issoft.Employees)
+            foreach (Employee employee in employeesOrderedByTaxID)
             {
                 Console.WriteLine(employee);
             }
 
-            issoft.Employees.Sort(new FullNameLengthComparer());
-            Console.WriteLine($"\nEmployees sorted by Full Name:");
-            foreach (Employee employee in issoft.Employees)
+            var employeesOrderedByFullNameLength = issoft.Employees.OrderBy(x => x.FirstName.Length + x.LastName.Length);
+            Console.WriteLine($"\nEmployees sorted by Full Name Length:");
+            foreach (Employee employee in employeesOrderedByFullNameLength)
             {
                 Console.WriteLine(employee);
             }
