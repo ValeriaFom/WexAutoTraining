@@ -8,8 +8,25 @@ namespace Homework5_ClassBook
 {
     class Book
     {
-        public string Name;
+        public string Name { get; set; }
         public int NumberOfPages;
-        public string ID;
+        public int ID;
+        public string dateOfPublication;
+
+        public List<Author> _authors;
+
+        //List<Employee> _employees;
+        //public List<Employee> Employees //зачем 2 раза используем лист? _employees и Employees
+        //{
+        //    get
+        //    {
+        //        return _employees;
+        //    }
+        //}
+
+        //public Office()
+        //{
+        //    _employees = new List<Employee>();
+        //}
     }
 }

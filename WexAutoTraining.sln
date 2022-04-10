@@ -13,9 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework6_AbstractClassAndM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7_Interfaces", "Homework7_Interfaces\Homework7_Interfaces.csproj", "{D3D5219A-CDF9-4950-8875-4F297C99F626}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework8_IComparer", "Homework8_IComparer\Homework8_IComparer.csproj", "{5F00E568-120D-4ECB-BBD3-110A6ACA982F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
 EndProject
@@ -45,10 +43,6 @@ Global
 		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3D5219A-CDF9-4950-8875-4F297C99F626}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5F00E568-120D-4ECB-BBD3-110A6ACA982F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{104244A4-80BA-40C2-AB65-E283320315C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{104244A4-80BA-40C2-AB65-E283320315C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{104244A4-80BA-40C2-AB65-E283320315C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
