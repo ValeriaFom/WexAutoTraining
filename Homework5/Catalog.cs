@@ -8,6 +8,6 @@ namespace Homework5_ClassBook
 {
     class Catalog
     {
-        public List<Book> _books;
+        public static List<Book> _bookCatalog;
     }
 }

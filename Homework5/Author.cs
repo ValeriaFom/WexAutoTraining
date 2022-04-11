@@ -8,8 +8,15 @@ namespace Homework5_ClassBook
 {
     class Author
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string DateofBirth { get; set; }
+        public virtual string FirstName { get; set; }
+        public virtual string LastName { get; set; }
+        public DateTime DateofBirth { get; set; }     
+        
+        public Author (string fname, string lname, DateTime dob)
+        {
+            fname = FirstName;
+            lname = LastName;
+            dob = DateofBirth;            
+        }
     }
 }
