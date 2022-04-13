@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7_Interfaces", "Hom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework8_IComparer", "Homework8_IComparer\Homework8_IComparer.csproj", "{5F00E568-120D-4ECB-BBD3-110A6ACA982F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW11_Selenium_XPath", "Selenium_XPath\HW11_Selenium_XPath.csproj", "{96BBBD8B-BFFF-4E80-90C7-D8AFCA48ECEA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96BBBD8B-BFFF-4E80-90C7-D8AFCA48ECEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96BBBD8B-BFFF-4E80-90C7-D8AFCA48ECEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96BBBD8B-BFFF-4E80-90C7-D8AFCA48ECEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96BBBD8B-BFFF-4E80-90C7-D8AFCA48ECEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
