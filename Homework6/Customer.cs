@@ -2,7 +2,6 @@
 {
     abstract class Customer
     {
-        public abstract void Pay();
-                    
+        public abstract void Pay();                    
     }
 }
