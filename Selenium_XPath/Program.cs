@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 
-namespace Selenium_XPath
+namespace HW11_Selenium_XPath
 {
     class Program
     {
