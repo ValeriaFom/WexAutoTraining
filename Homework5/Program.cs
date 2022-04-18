@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
-namespace Homework5_ClassBook
+namespace Homework5_ClassBook_Homework9_BookCatalog
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             //Homework 5
@@ -35,22 +37,98 @@ namespace Homework5_ClassBook
             //3.Получить список всех книг конкретного автора, напечатанные после заданного года
             //4.Получить список всех авторов, отсортированных по году рождения
 
-            var _allAuthors = new List<Author>
+            var catalog = new Catalog();
+
+            //catalog.Books.AddRange(   // ????????? чтобы не писать catalog.Books.Add каждый раз
+
+            catalog.Books.Add(
+                new Book("Peter Pan",
+                new List<Author>()
+                {
+                    new Author("James", "Barrie", new DateTime(1860, 5, 9)),
+                    new Author("52", "2782", new DateTime(1860, 5, 9))
+                },
+                new DateTime(1900, 12, 4), 54, 1));
+            catalog.Books.Add(
+                new Book("Fahrenheit 451",
+                new List<Author>()
+                {
+                    new Author("Ray", "Bradbury", new DateTime(1920, 08, 22)),
+                    new Author("52", "2782", new DateTime(1860, 5, 9))
+                },
+                new DateTime(1980, 05, 15), 101, 1));
+            //catalog.Books.Add(
+            //    new Book("Le Petit Prince",
+            //    new Author("Antoine", "de Saint-Exupéry", new DateTime(1900, 06, 29)),
+            //    new DateTime(1942, 03, 24), 73, 2));
+            //catalog.Books.Add(
+            //    new Book("Dandelion Wine",
+            //    new Author("Ray", "Bradbury", new DateTime(1920, 08, 22)),
+            //    new DateTime(1964, 01, 31), 164, 3));
+            //catalog.Books.Add(
+            //    new Book("The Master and Margarita",
+            //    new Author("Mikhail", "Bulgakov", new DateTime(1891, 5, 15)),
+            //    new DateTime(2001, 10, 29), 268, 4));
+
+            var allAuthors = catalog.Books.SelectMany(x => x.Authors).ToList();
+
+
+            foreach (var book in catalog)
             {
-                new Author ("Antoine", "de Saint-Exupéry", new DateTime (1900, 06, 29)),
-                new Author ("Ray", "Bradbury", new DateTime(1920, 08, 22)),
-                new Author ("James", "Barrie", new DateTime(1860, 5, 9)),
-                //new Author { FirstName = "Mikhail", LastName = "Bulgakov", DateofBirth = new DateTime(1891, 5, 15) },
-                //new Author { FirstName = "Nikolai", LastName = "Gogol", DateofBirth = new DateTime(1809, 4, 1) },
-            };
+                Console.WriteLine(book.ToString());
+            }
 
-            //foreach (var item in _allAuthors)
+            //var list = new List<Book>
             //{
-            //    Console.WriteLine($"{item.FirstName} {item.LastName}, {item.DateofBirth}");
-            //}
+            //    new Book("Peter Pan",
+            //        new Author("James", "Barrie", new DateTime(1860, 5, 9)),
+            //        new DateTime(1900, 12, 4), 54, 1)
+            //};
 
-            new Book("qw", new Author("sds", "sds", new DateTime(2000, 6, 28)), new DateTime(2001, 12, 4), 78, 5);
-            //new Book("qw", new Author("sds", "sds", new DateTime(2000, 6, 28)), 78, 5);
+            //1 point
+            var booksSortedByName = catalog.GetBooksSortedByName();
+            Console.WriteLine("\n");
+            foreach (var book in booksSortedByName)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
+            //2 point            
+            var authorsFromCatalog = catalog.GetAuthorsFromCatalog();
+            Console.WriteLine("\n");
+            foreach (var author in authorsFromCatalog)
+            {
+                Console.WriteLine(author.ToString());
+            }
+
+            var result = catalog.GetBooksByAuthor2("52", "2782");
+
+            //3 point
+            //можно ли объединить 2 метода в 1 коллекцию?
+            //var booksOfAuthorPublichedAfterData4 = catalog.GetBooksByAuthor("Bradbury", "Ray") && catalog.GetBooksPublishedAfterData(1970, 1, 1);
+
+            //var booksOfAuthorPublichedAfterData = catalog.GetBooksPublishedAfterData(1970, 1, 1);  
+
+            //var booksOfAuthorPublichedAfterData2 = catalog.GetBooksByAuthor("Bradbury", "Ray");
+
+            //var booksOfAuthorPublichedAfterData3 = catalog.Books.Where(IsBookPublishedAfterData && IsBookWrittenByAuthor); // ??????
+
+            var booksOfAuthorPublichedAfterData3 = catalog.GetBooksOfAuthorPublichedAfterData("Bradbury", "Ray", new DateTime(1970, 1, 1));  //???? каких аргументов не хватает?
+            Console.WriteLine("\n");
+            foreach (var book in booksOfAuthorPublichedAfterData3)
+            {
+                Console.WriteLine(book.ToString());
+            }
+
+            //4 point
+            var authorsSortedByDateOfBirth = catalog.GetAuthorsSortedByDateOfBirth();
+            Console.WriteLine("\n");
+            foreach (var author in authorsSortedByDateOfBirth)
+            {
+                Console.WriteLine(author.ToString());
+            }
+            var res = catalog.Books;
+
         }
     }
 }

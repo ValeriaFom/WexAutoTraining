@@ -4,67 +4,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework5_ClassBook
+namespace Homework5_ClassBook_Homework9_BookCatalog
 {
-    class Book
+    public class Book
     {
-        public string Name { get; set; }
-        public int NumberOfPages { get; set; }
+        public string Name { get; }
+        public int NumberOfPages { get; }
 
-        private int id;
-        public int ID
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                foreach (var book in Catalog._bookCatalog)
-                {
-                    if (Catalog._bookCatalog.Count = 0)
-                    {
-                        id = value;
-                    }
-                    else if (value != book.ID)
-                    {
-                        id = value;
-                    }
-                    else
-                    {
-                        Console.WriteLine("A book with entered ID already exists! Please, add another book.");
-                        break;
-                    }
-                }
-            }
-        }
+        //private int id;
+        public int ID { get; }
 
-        public DateTime DateOfPublication { get; set; }
-
-        public List<Author> _bookAuthors;
-
-        public Book (string name, Author author, DateTime dateOfPublication, int nbrofPages, int id)  //как сделать возможность добавления нескольких авторов?
-        {
-            name = Name;
-            _bookAuthors.Add(author);
-            dateOfPublication = DateOfPublication;
-            nbrofPages = NumberOfPages;
-            id = ID;
-        }
-
-        
-        //List<Employee> _employees;
-        //public List<Employee> Employees //зачем 2 раза используем лист? _employees и Employees
+        //public int ID
         //{
         //    get
         //    {
-        //        return _employees;
+        //        return id;
+        //    }
+        //    set
+        //    {
+        //        foreach (var book in Catalog.Books ?)
+        //        {
+        //            if (value != book.ID)
+        //            {
+        //                id = value;
+        //            }
+        //            else
+        //            {
+        //                Console.WriteLine("A book with the entered ID already exists! Please, add another book.");
+        //                break;
+        //            }
+        //        }
         //    }
         //}
 
-        //public Office()
+        public DateTime DateOfPublication { get; }
+
+        public List<Author> Authors;        
+
+        public Book (string name, List<Author> author, DateTime dateOfPublication, int nbrofPages, int id)  //как сделать возможность добавления нескольких авторов?
+        {
+            Name = name;
+            Authors = author;            
+            DateOfPublication = dateOfPublication;
+            NumberOfPages = nbrofPages;
+            ID = id;            
+        }
+        //public static string ToStringBook()
         //{
-        //    _employees = new List<Employee>();
+        //    return Name + ", " + Author.ToStringAuthor() + ", " + DateOfPublication + ", " + ID;  ///???
         //}
+
+        public override string ToString()
+        {
+            return Name + ", "+ DateOfPublication + ", " + ID;
+            //return Name + ", " + Author.FirstName + ", " + DateOfPublication + ", " + ID;  ///????????????
+            //return Name + ", " + Author.ToString() + DateOfPublication + ", " + ID;
+        }
     }
 }

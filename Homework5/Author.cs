@@ -4,19 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Homework5_ClassBook
+namespace Homework5_ClassBook_Homework9_BookCatalog
 {
-    class Author
+    public class Author
     {
-        public virtual string FirstName { get; set; }
-        public virtual string LastName { get; set; }
-        public DateTime DateofBirth { get; set; }     
+        public string FirstName { get; }
+        public string LastName { get; }
+        public DateTime DateofBirth { get; }     
         
         public Author (string fname, string lname, DateTime dob)
         {
-            fname = FirstName;
-            lname = LastName;
-            dob = DateofBirth;            
+            FirstName = fname;
+            LastName = lname;
+            DateofBirth = dob;            
         }
+
+        //public static string ToStringAuthor()
+        //{
+        //    return FirstName + " " + LastName + ", " + DateofBirth; ///????
+        //}
+
+        public override string ToString()
+        {
+            return FirstName + " " + LastName + ", " + DateofBirth;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Author)
+            {
+                Author author = obj as Author;
+                return FirstName == author.FirstName && LastName == author.LastName;
+            }
+
+            return false;
+        }
+
     }
 }

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework1_Min_MaxValues", "WexAutoTraining\Homework1_Min_MaxValues.csproj", "{96AF3E4C-32E5-49CF-8A15-398DD1EE351B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5_ClassBook", "Homework5\Homework5_ClassBook.csproj", "{E2A7A61D-6469-42C3-9837-6CDD4674EA27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework5_ClassBook_Homework9_BookCatalog", "Homework5\Homework5_ClassBook_Homework9_BookCatalog.csproj", "{E2A7A61D-6469-42C3-9837-6CDD4674EA27}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework4_ChangeMaxMinValues", "Homework4\Homework4_ChangeMaxMinValues.csproj", "{743C1DAF-6BFA-4D97-A127-98E795B25CFD}"
 EndProject
