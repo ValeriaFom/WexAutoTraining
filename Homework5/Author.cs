@@ -19,11 +19,6 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
             DateofBirth = dob;            
         }
 
-        //public static string ToStringAuthor()
-        //{
-        //    return FirstName + " " + LastName + ", " + DateofBirth; ///????
-        //}
-
         public override string ToString()
         {
             return FirstName + " " + LastName + ", " + DateofBirth;
@@ -36,9 +31,7 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
                 Author author = obj as Author;
                 return FirstName == author.FirstName && LastName == author.LastName;
             }
-
             return false;
         }
-
     }
 }
