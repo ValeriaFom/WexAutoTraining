@@ -8,22 +8,13 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
 {
     public class Book
     {
-        public string Name { get; }
-        public int NumberOfPages { get; }
-        public int ID { get; }
+        public string Name { get; set; }
+        public int NumberOfPages { get; set; }
+        public int ID { get; set; }
 
-        public DateTime DateOfPublication { get; }
+        public DateTime DateOfPublication { get; set; }
 
         public List<Author> Authors;        
-
-        public Book (string name, List<Author> author, DateTime dateOfPublication, int nbrofPages, int id)
-        {
-            Name = name;
-            Authors = author;            
-            DateOfPublication = dateOfPublication;
-            NumberOfPages = nbrofPages;
-            ID = id;            
-        }        
 
         public override string ToString()
         {

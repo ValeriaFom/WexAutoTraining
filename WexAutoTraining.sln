@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework2_ArraySquared", "H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsForBookCatalogHW9", "UnitTests\UnitTestsForBookCatalogHW9.csproj", "{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FA44539-BA08-41D8-995A-336C8ACEE13D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

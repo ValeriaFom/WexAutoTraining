@@ -1,0 +1,44 @@
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Homework5_ClassBook_Homework9_BookCatalog;
+using System.Collections.Generic;
+using System;
+
+namespace UnitTestsForBookCatalogHW9
+{
+    [TestClass]
+    public class CheckAddBook
+    {
+        [TestMethod]
+        public void CheckUniqueIDPositive() 
+        //не работает без кода для создания книги
+        {
+            var catalog = new Catalog();
+            catalog.AddBook("Peter Pan",
+                    new List<Author>()
+                    {
+                    new Author("James", "Barrie", new DateTime(1860, 5, 9)),
+                    new Author("52", "2782", new DateTime(1861, 4, 9))
+                    },
+                    new DateTime(1900, 12, 4), 54, 1);
+            
+            bool result = Catalog.IsIDUnique(15);
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void CheckUniqueIDNegative()
+        {
+            var catalog = new Catalog();
+            catalog.AddBook("Peter Pan",
+                    new List<Author>()
+                    {
+                    new Author("James", "Barrie", new DateTime(1860, 5, 9)),
+                    new Author("52", "2782", new DateTime(1861, 4, 9))
+                    },
+                    new DateTime(1900, 12, 4), 54, 1);
+
+            bool result = Catalog.IsIDUnique(1);
+            Assert.IsFalse(result);
+        }
+    }
+}
