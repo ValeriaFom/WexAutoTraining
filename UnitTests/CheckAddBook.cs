@@ -10,7 +10,6 @@ namespace UnitTestsForBookCatalogHW9
     {
         [TestMethod]
         public void CheckUniqueIDPositive() 
-        //не работает без кода для создания книги
         {
             var catalog = new Catalog();
             catalog.AddBook("Peter Pan",

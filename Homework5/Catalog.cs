@@ -39,7 +39,7 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
         ////2
         //public List<Author> GetAuthorsFromCatalog()
         //{
-        //    return Books.SelectMany(x => x.Authors).Distinct().ToList();
+        //    return Books.SelectMany(x => x.Authors).Distinct(new AuthorsEqualityComparer()).ToList();
         //}
 
         ////3
@@ -110,7 +110,7 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
                 newBook.ID = id;
                 authors = author;
 
-                //authors = new List<Author>(author);
+                //authors = new List<Author>(author);  ///????????
                 //authors.Add(author);
 
                 //author = Books.SelectMany(x => x.Authors);
