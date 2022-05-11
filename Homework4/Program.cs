@@ -4,94 +4,84 @@ namespace Homework4_ChangeMaxMinValues
 {
     class Program
     {
+        static int[] FindMinValueAndPlaceInArray(int[] array)
+        {
+            int minPlace = 0;
+            int minValue = array[0];
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] < minValue)
+                {
+                    minValue = array[i];
+                    minPlace = i;
+                }
+            }
+            return new int[] { minValue, minPlace };
+        }
+
+        static int[] FindMaxValueAndPlaceInArray(int[] array)
+        {
+            int maxValue = array[0];
+            int maxPlace = 0;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i] > maxValue)
+                {
+                    maxValue = array[i];
+                    maxPlace = i;
+                }
+            }
+            return new int[] { maxValue, maxPlace };
+        }
+
+        static void SwapMinAndMaxValues(int[] array, int minPlace, int maxPlace)
+        {
+            (array[minPlace], array[maxPlace]) = (array[maxPlace], array[minPlace]);
+        }
+
+    static int[] CreateArrayWithRandomValues()
+        {
+            Console.WriteLine("Enter number for array length");
+            string temp = Console.ReadLine(); 
+            int length = Convert.ToInt16(temp);
+
+            Random rnd = new Random();
+            var array = new int[length];
+
+            for (int index = 0; index < length; index++)
+            {
+                array[index] = rnd.Next(-100, 100);
+            }
+            return array;
+        }
+
         static void Main(string[] args)
         {
             //Homework 4
             //1.Создать два произвольных массива, подсчитать максимальное  и минимальное значение их элементов. Вывести на экран.
-            //2.Поменять в массивах максимальные и минимальные значения местами
+            //2.Поменять в массивах максимальные и минимальные значения местами.
 
-            int[] array1 = { 5, -7, 56, 1, 23 };
-
-            int minValue = array1[0];
-            int minPlace = 0;
-
-            for (int i = 1; i < array1.Length; i++)
+            for (int i = 1; i < 3; i++)
             {
-                if (array1[i] < minValue)
+                var array = CreateArrayWithRandomValues();
+
+                foreach (int item in array)
                 {
-                    minValue = array1[i];
-                    minPlace = i;
+                    Console.WriteLine(item);
                 }
-            }
 
-            int maxValue = array1[0];
-            int maxPlace = 0;
+                var minValueAndPlace = FindMinValueAndPlaceInArray(array);
+                var maxValueAndPlace = FindMaxValueAndPlaceInArray(array);
+                Console.WriteLine("Minimum value = {0}, Maximum value = {1}", minValueAndPlace[0], maxValueAndPlace[0] + "\n");
 
-            for (int i = 1; i < array1.Length; i++)
-            {
-                if (array1[i] > maxValue)
+                SwapMinAndMaxValues(array, minValueAndPlace[1], maxValueAndPlace[1]);
+
+                foreach (int item in array)
                 {
-                    maxValue = array1[i];
-                    maxPlace = i;
+                    Console.WriteLine(item);
                 }
-            }
-
-            foreach (int item in array1)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("minValue and place = {0}, {1}, maxValue and place = {2}, {3}", minValue, minPlace, maxValue, maxPlace);
-
-            int oldMinPlace = array1[minPlace];
-            array1[minPlace] = array1[maxPlace];
-            array1[maxPlace] = oldMinPlace;
-
-            foreach (int item in array1)
-            {
-                Console.WriteLine(item);
-            }
-
-            int[] array2 = { 98465, 3, 0, -45, 1568 };
-
-            int minValue2 = array2[0];
-            int minPlace2 = 0;
-
-            for (int i = 1; i < array2.Length; i++)
-            {
-                if (array2[i] < minValue2)
-                {
-                    minValue2 = array2[i];
-                    minPlace2 = i;
-                }
-            }
-
-            int maxValue2 = array2[0];
-            int maxPlace2 = 0;
-
-            for (int i = 1; i < array2.Length; i++)
-            {
-                if (array2[i] > maxValue2)
-                {
-                    maxValue2 = array2[i];
-                    maxPlace2 = i;
-                }
-            }
-
-            foreach (int item in array2)
-            {
-                Console.WriteLine(item);
-            }
-
-            Console.WriteLine("minValue and place = {0}, {1}, maxValue and place = {2}, {3}", minValue2, minPlace2, maxValue2, maxPlace2);
-
-            int oldMinPlace2 = array2[minPlace2];
-            array2[minPlace2] = array2[maxPlace2];
-            array2[maxPlace2] = oldMinPlace2;
-
-            foreach (int item in array2)
-            {
-                Console.WriteLine(item);
             }
         }
     }
