@@ -28,42 +28,42 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
 
             try
             {
-                catalog.AddBook("Peter Pan",
+                catalog.AddBook(new Book("Peter Pan",
                     new List<Author>()
                     {
                     new Author("James", "Barrie", new DateTime(1860, 5, 9)),
                     new Author("52", "2782", new DateTime(1861, 4, 9))
                     },
-                    new DateTime(1900, 12, 4), 54, 1);
+                    new DateTime(1900, 12, 4), 54, 1));
 
-                catalog.AddBook("Fahrenheit 451",
+                catalog.AddBook(new Book("Fahrenheit 451",
                     new List<Author>()
                     {
                     new Author("Ray", "Bradbury", new DateTime(1920, 08, 22)),
                     new Author("52", "2782", new DateTime(1861, 4, 9))
                     },
-                    new DateTime(1980, 05, 15), 101, 2);
+                    new DateTime(1980, 05, 15), 101, 2));
 
-                catalog.AddBook("Le Petit Prince",
+                catalog.AddBook(new Book("Le Petit Prince",
                     new List<Author>()
                     {
                     new Author("Antoine", "de Saint-Exupéry", new DateTime(1900, 06, 29))
                     },
-                    new DateTime(1942, 03, 24), 73, 3);
+                    new DateTime(1942, 03, 24), 73, 3));
 
-                catalog.AddBook("Dandelion Wine",
+                catalog.AddBook(new Book("Dandelion Wine",
                     new List<Author>()
                     {
                     new Author("Ray", "Bradbury", new DateTime(1920, 08, 22))
                     },
-                    new DateTime(1964, 01, 31), 164, 4);
+                    new DateTime(1964, 01, 31), 164, 4));
 
-                catalog.AddBook("The Master and Margarita",
+                catalog.AddBook(new Book("The Master and Margarita",
                     new List<Author>()
                     {
                     new Author("Mikhail", "Bulgakov", new DateTime(1891, 5, 15))
                     },
-                    new DateTime(2001, 10, 29), 268, 5);
+                    new DateTime(2001, 10, 29), 268, 5));
             }
             catch (Exception ex)
             {
@@ -75,39 +75,39 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
                 Console.WriteLine(book.ToString());
             }
 
-            ////1 point
-            //var booksSortedByName = catalog.GetBooksSortedByName();
-            //Console.WriteLine("\n");
-            //foreach (var book in booksSortedByName)
-            //{
-            //    Console.WriteLine(book.ToString());
-            //}
+            //1 point
+            var booksSortedByName = catalog.GetBooksSortedByName();
+            Console.WriteLine("\n");
+            foreach (var book in booksSortedByName)
+            {
+                Console.WriteLine(book.ToString());
+            }
 
-            ////2 point            
-            //var authorsFromCatalog = catalog.GetAuthorsFromCatalog();
-            //Console.WriteLine("\n");
-            //foreach (var author in authorsFromCatalog)
-            //{
-            //    Console.WriteLine(author.ToString());
-            //}
+            //2 point            
+            var authorsFromCatalog = catalog.GetAuthorsFromCatalog();
+            Console.WriteLine("\n");
+            foreach (var author in authorsFromCatalog)
+            {
+                Console.WriteLine(author.ToString());
+            }
 
-            ////3 point
-            //var result = catalog.GetBooksByAuthor("52", "2782");
+            //3 point
+            var result = catalog.GetBooksByAuthor("52", "2782");
 
-            //var booksOfAuthorPublichedAfterData = catalog.GetBooksOfAuthorPublichedAfterData("Bradbury", "Ray", new DateTime(1970, 1, 1));
-            //Console.WriteLine("\n");
-            //foreach (var book in booksOfAuthorPublichedAfterData)
-            //{
-            //    Console.WriteLine(book.ToString());
-            //}
+            var booksOfAuthorPublichedAfterData = catalog.GetBooksOfAuthorPublichedAfterData("Bradbury", "Ray", new DateTime(1970, 1, 1));
+            Console.WriteLine("\n");
+            foreach (var book in booksOfAuthorPublichedAfterData)
+            {
+                Console.WriteLine(book.ToString());
+            }
 
-            ////4 point
-            //var authorsSortedByDateOfBirth = catalog.GetAuthorsSortedByDateOfBirth();
-            //Console.WriteLine("\n");
-            //foreach (var author in authorsSortedByDateOfBirth)
-            //{
-            //    Console.WriteLine(author.ToString());
-            //}
+            //4 point
+            var authorsSortedByDateOfBirth = catalog.GetAuthorsSortedByDateOfBirth();
+            Console.WriteLine("\n");
+            foreach (var author in authorsSortedByDateOfBirth)
+            {
+                Console.WriteLine(author.ToString());
+            }
         }
     }
 }

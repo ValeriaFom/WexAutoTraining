@@ -12,15 +12,15 @@ namespace UnitTestsForBookCatalogHW9
         public void CheckUniqueIDPositive() 
         {
             var catalog = new Catalog();
-            catalog.AddBook("Peter Pan",
+            catalog.AddBook(new Book("Peter Pan",
                     new List<Author>()
                     {
                     new Author("James", "Barrie", new DateTime(1860, 5, 9)),
                     new Author("52", "2782", new DateTime(1861, 4, 9))
                     },
-                    new DateTime(1900, 12, 4), 54, 1);
+                    new DateTime(1900, 12, 4), 54, 1));
             
-            bool result = Catalog.IsIDUnique(15);
+            bool result = catalog.IsIDUnique(15);
             Assert.IsTrue(result);
         }
 
@@ -28,15 +28,15 @@ namespace UnitTestsForBookCatalogHW9
         public void CheckUniqueIDNegative()
         {
             var catalog = new Catalog();
-            catalog.AddBook("Peter Pan",
+            catalog.AddBook(new Book("Peter Pan",
                     new List<Author>()
                     {
                     new Author("James", "Barrie", new DateTime(1860, 5, 9)),
                     new Author("52", "2782", new DateTime(1861, 4, 9))
                     },
-                    new DateTime(1900, 12, 4), 54, 1);
+                    new DateTime(1900, 12, 4), 54, 1));
 
-            bool result = Catalog.IsIDUnique(1);
+            bool result = catalog.IsIDUnique(1);
             Assert.IsFalse(result);
         }
     }

@@ -10,12 +10,14 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
     {
         public bool Equals (Author x, Author y)
         {
-            throw new NotImplementedException();
+            return x == y;
         }
 
         public int GetHashCode(Author obj)
         {
-            throw new NotImplementedException();
+            return obj.GetHashCode();
         }
+
+
     }
 }

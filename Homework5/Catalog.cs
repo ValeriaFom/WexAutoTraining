@@ -9,8 +9,8 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
 {
     public class Catalog: IEnumerable<Book>
     {
-        static List<Book> _books;
-        private static List<Book> Books
+        List<Book> _books;
+        private List<Book> Books
         {
             get => _books;
         }
@@ -36,37 +36,37 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
             return sortedBooks;   
         }
 
-        ////2
-        //public List<Author> GetAuthorsFromCatalog()
-        //{
-        //    return Books.SelectMany(x => x.Authors).Distinct(new AuthorsEqualityComparer()).ToList();
-        //}
+        //2
+        public List<Author> GetAuthorsFromCatalog()
+        {
+            return Books.SelectMany(x => x.Authors).Distinct(new AuthorsEqualityComparer()).ToList();
+        }
 
-        ////3
-        //public List<Book> GetBooksByAuthor(string firstName, string lastName)
-        //{
-        //    return Books.Where(b => b.Authors.Where(x => x.FirstName == firstName && x.LastName == lastName).Count() !=0).ToList();
-        //}
+        //3
+        public List<Book> GetBooksByAuthor(string firstName, string lastName)
+        {
+            return Books.Where(b => b.Authors.Where(x => x.FirstName == firstName && x.LastName == lastName).Count() != 0).ToList();
+        }
 
-        //public List<Book> GetBooksOfAuthorPublichedAfterData(string lastName, string firstName, DateTime date)
-        //{
-        //    var books = new List<Book>();
-        //    foreach (var book in Books)
-        //    {
-        //        if (book.DateOfPublication >= date && book.Authors.Any(b => b.LastName == lastName && b.FirstName == firstName))
-        //        {
-        //            books.Add(book);
-        //        }
-        //    }
-        //    return books;
-        //}
+        public List<Book> GetBooksOfAuthorPublichedAfterData(string lastName, string firstName, DateTime date)
+        {
+            var books = new List<Book>();
+            foreach (var book in Books)
+            {
+                if (book.DateOfPublication >= date && book.Authors.Any(b => b.LastName == lastName && b.FirstName == firstName))
+                {
+                    books.Add(book);
+                }
+            }
+            return books;
+        }
 
-        ////4
-        //public List<Author> GetAuthorsSortedByDateOfBirth()
-        //{
-        //    var authors = Books.SelectMany(x => x.Authors).OrderBy(b => b.DateofBirth).Distinct().ToList();
-        //    return authors;
-        //}
+        //4
+        public List<Author> GetAuthorsSortedByDateOfBirth()
+        {
+            var authors = Books.SelectMany(x => x.Authors).OrderBy(b => b.DateofBirth).Distinct().ToList();
+            return authors;
+        }
 
         //HW10
         /// <summary>
@@ -74,7 +74,7 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
         /// </summary>
         /// <param name="id"></param>
         /// <returns>True if ID is unique.</returns>
-        public static bool IsIDUnique(int id)
+        public bool IsIDUnique(int id)
         {
             foreach (var book in Books)
             {
@@ -96,26 +96,12 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
         /// <param name="nbrofPages"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Book AddBook(string name, List<Author> author, DateTime dateOfPublication, int nbrofPages, int id)
+        public void AddBook(Book newBook)
         {
-            var newBook = new Book();
-            var authors = new List<Author>();
 
-            if (IsIDUnique(id) == true)
+            if (IsIDUnique(newBook.ID) == true)
             {
                 Books.Add(newBook);
-                newBook.Name = name;
-                newBook.DateOfPublication = dateOfPublication;
-                newBook.NumberOfPages = nbrofPages;
-                newBook.ID = id;
-                authors = author;
-
-                //authors = new List<Author>(author);  ///????????
-                //authors.Add(author);
-
-                //author = Books.SelectMany(x => x.Authors);
-
-                return newBook;
             }
             else
             {

@@ -20,5 +20,22 @@ namespace Homework5_ClassBook_Homework9_BookCatalog
         {
             return Name + ", " + DateOfPublication + ", " + ID;
         }
+
+        public Book(string name, List<Author> author, DateTime dateOfPublication, int nbrofPages, int id)
+        {
+           
+                Name = name;
+                DateOfPublication = dateOfPublication;
+                NumberOfPages = nbrofPages;
+                ID = id;
+                Authors = author;
+
+                //authors = new List<Author>(author);  ///????????
+                //authors.Add(author);
+
+                //author = Books.SelectMany(x => x.Authors);
+        }
     }
 }
+    
+
