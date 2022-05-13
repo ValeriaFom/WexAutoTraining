@@ -11,11 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework4_ChangeMaxMinValue
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework6_AbstractClassAndMethod", "Homework6\Homework6_AbstractClassAndMethod.csproj", "{5A341486-9054-45AF-B7CE-D56D890CD5F2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7_Interfaces", "Homework7_Interfaces\Homework7_Interfaces.csproj", "{D3D5219A-CDF9-4950-8875-4F297C99F626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework7and8_Interfaces_IComparer", "Homework7_Interfaces\Homework7and8_Interfaces_IComparer.csproj", "{D3D5219A-CDF9-4950-8875-4F297C99F626}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework2_ArraySquared", "Homework2_ArraySquared\Homework2_ArraySquared.csproj", "{104244A4-80BA-40C2-AB65-E283320315C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homework3_3ArraysWithAverages", "Homework3_3ArraysWithAverages\Homework3_3ArraysWithAverages.csproj", "{8FA44539-BA08-41D8-995A-336C8ACEE13D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestsForBookCatalogHW9", "UnitTests\UnitTestsForBookCatalogHW9.csproj", "{FC629DA6-A186-4BED-8D4E-DD0EBB1F8ECB}"
 EndProject
