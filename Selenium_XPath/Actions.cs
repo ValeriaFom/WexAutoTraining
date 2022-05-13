@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-//using OpenQA.Selenium.Interactions.Internal;
-//using OpenQA.Selenium.Interactions.Internal;
+using OpenQA.Selenium.Interactions.Internal;
+//using OpenQA.Selenium.Interactions.Actions;
+//import org.OpenQA.Selenium.Interactions.Actions;
 
 namespace HW11_Selenium_XPath
 {
@@ -14,11 +15,9 @@ namespace HW11_Selenium_XPath
     {
         public Actions(IWebDriver driver) : base(driver) { }
 
-        public void MouseHover(IWebElement element)  //можно ли делать MouseHover?
+        public void MouseHover(IWebElement element)  //как сделать MouseHover? -> во 2ой части тренинга
         {
             //Actions action = new Actions(_driver);
         }
-
     }
-
 }

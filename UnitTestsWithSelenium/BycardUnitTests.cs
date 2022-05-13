@@ -10,31 +10,30 @@ namespace UnitTestsWithSelenium
     [TestClass]
     public class BycardUnitTests
     {
-        [TestMethod]
-        public void CheckLoginPopupAppearsAfterLoginButton()
+        WebDriver driver = null;
+
+        [TestInitialize]
+        public void Initialize()
         {
-            WebDriver driver = new ChromeDriver();
+            driver = new ChromeDriver();
             driver.Url = "https://bycard.by/";
 
             driver.Manage().Window.Maximize();
+        }
 
+        [TestMethod]
+        public void CheckLoginPopupAppearsAfterLoginButton()
+        {
             HomePage homePage = new HomePage(driver);
             homePage.GoToLoginPage();
 
             LoginPage loginPage = new LoginPage(driver);
             Assert.IsTrue (loginPage.IsLoginPopupDisplayedWithElements());
-
-            driver.Close();
         }
 
         [TestMethod]
         public void CheckLoginPopupCloses()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Url = "https://bycard.by/";
-
-            driver.Manage().Window.Maximize();
-
             HomePage homePage = new HomePage(driver);
             homePage.GoToLoginPage();
 
@@ -42,80 +41,44 @@ namespace UnitTestsWithSelenium
             loginPage.CloseLoginPopup();
 
             Assert.IsTrue(homePage.IsHomePageOpened());
-
-            driver.Close();
         }
 
         [TestMethod]
         public void CheckPopupWithCityAppears()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Url = "https://bycard.by/";
-
-            driver.Manage().Window.Maximize();
-
-            Thread.Sleep(4000); //4 sec
-
             HomePage homePage = new HomePage(driver);
 
             Assert.IsTrue(homePage.IsPopupWithCityDisplayed());
-
-            driver.Close();
         }
 
 
         [TestMethod]
         public void CheckPopupWithCityClosesAfterYesButton()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Url = "https://bycard.by/";
-
-            driver.Manage().Window.Maximize();
-
-            Thread.Sleep(4000); //4 sec
-
             HomePage homePage = new HomePage(driver);
             homePage.ClosePopupWithCityViaYesButton();
 
-            Thread.Sleep(10000);
+            Thread.Sleep(4000);
 
-            Assert.IsTrue(homePage.IsPopupWithCityClosed()); //почему Fail??
-
-            driver.Close();
-        }
-
-        //[TestMethod]
-        public void CheckPlacesDDLAppearsWithElementsAfterMouseover()
-        {
-            WebDriver driver = new ChromeDriver();
-            driver.Url = "https://bycard.by/";
-
-            driver.Manage().Window.Maximize();
-
-            HomePage homePage = new HomePage(driver);
-            Actions action = new Actions(driver);
-
-            //action.MouseHover(homePage._menuPlaces); // как сделать доступными кнопки из других классов?
-
-            driver.Close();
+            Assert.IsTrue(homePage.IsPopupWithCityClosed());
         }
 
         [TestMethod]
         public void CheckSchedulePageOpensAfterMenuScheduleButton()
         {
-            WebDriver driver = new ChromeDriver();
-            driver.Url = "https://bycard.by/";
-
-            driver.Manage().Window.Maximize();
-
             HomePage homePage = new HomePage(driver);
             homePage.GoToShedulePage();
 
             SchedulePage schedulePage = new SchedulePage(driver);
 
             Assert.IsTrue(schedulePage.IsSchedulePageOpened());
+        }
 
+        [TestCleanup]
+        public void CleanUp()
+        {
             driver.Close();
         }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -11,16 +12,19 @@ namespace HW11_Selenium_XPath
 {
     public abstract class BasePage
     {
+        const int attemptsMaxNumber = 10;
         protected IWebDriver _driver;
+
         public BasePage(IWebDriver driver)
         {
             _driver = driver;
         }
+
         public IWebElement FindElementByXPath(string xPath)
         {
             IWebElement element = null;
             int attemptsNumber = 0;
-            while (attemptsNumber < 10)
+            while (attemptsNumber < attemptsMaxNumber)
             {
                 try
                 {
@@ -29,7 +33,7 @@ namespace HW11_Selenium_XPath
                 catch (Exception ex)
                 {
                     //_driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                    Thread.Sleep(1000);
+                    Thread.Sleep(3000);
                     Console.WriteLine("Can't find element. I will try again.");
                     Console.WriteLine(ex.Message);
                 }
@@ -42,34 +46,32 @@ namespace HW11_Selenium_XPath
             return element;
         }
 
-        //public List<IWebElement> FindElementSByXPath(string xPath)
-        //{
-        //    var elements = new List<IWebElement>();
-        //    int attemptsNumber = 0;
-        //    while (attemptsNumber < 10)
-        //    {
-        //        try
-        //        {
-        //            elements = _driver.FindElements(By.XPath(xPath)); //????
-        //        }
+        public ReadOnlyCollection<IWebElement> FindElementSByXPath(string xPath)
+        {
+            ReadOnlyCollection<IWebElement> elements = null;
+            int attemptsNumber = 0;
+            while (attemptsNumber < attemptsMaxNumber)
+            {
+                try
+                {
+                    elements = _driver.FindElements(By.XPath(xPath));
+                }
 
-        //        catch (Exception ex)
-        //        {
-        //            Thread.Sleep(1000);
-        //            Console.WriteLine("Can't find element. I will try again.");
-        //            Console.WriteLine(ex.Message);
-        //        }
+                catch (Exception ex)
+                {
+                    Thread.Sleep(3000);
+                    Console.WriteLine("Can't find element. I will try again.");
+                    Console.WriteLine(ex.Message);
+                }
 
-        //        if (elements.Count > 0)
-        //        {
-        //            break;
-        //        }
+                if (elements.Count > 0)
+                {
+                    break;
+                }
 
-        //        attemptsNumber++;
-        //    }
-        //    return elements;
-        //}
-
-
+                attemptsNumber++;
+            }
+            return elements;
+        }
     }
 }

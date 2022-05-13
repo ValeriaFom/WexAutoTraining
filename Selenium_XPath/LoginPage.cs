@@ -46,7 +46,7 @@ namespace HW11_Selenium_XPath
                 _popupCheckboxText != null &&
                 _popupNextButton != null;
 
-            //popupElement5?.Count == 1;
+            //popupElement5?.Count == 1; //если FindElementS
         }
         public void CloseLoginPopup()
         {

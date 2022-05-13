@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Interactions.Internal;
-//import org.OpenQA.Selenium.Interactions.Actions;
 
 namespace HW11_Selenium_XPath
 {
@@ -16,10 +16,10 @@ namespace HW11_Selenium_XPath
         const string logoXpath = "//section[1]/div[contains(@class,'navigation_left')]/..//img";
         const string menuScheduleXpath = "//section[1]/div[contains(@class,'navigation_left')]/..//a[contains(text(),'Расписание')]";
 
-        IWebElement _loginButton; //нужен ли = null?
+        IWebElement _loginButton;
         IWebElement _logo;
         IWebElement _menuSchedule;
-        public IWebElement _menuPlaces;
+        IWebElement _menuPlaces;
         IWebElement _textOnPopupWithCity;
         IWebElement _yesButtonOnPopupWithCity;
         IWebElement _noButtonOnPopupWithCity;
@@ -63,11 +63,11 @@ namespace HW11_Selenium_XPath
             _yesButtonOnPopupWithCity?.Click();
         }
 
-        public bool IsPopupWithCityClosed() //??? нужна коллекция
+        public bool IsPopupWithCityClosed()
         {
-            return _textOnPopupWithCity == null;
-            //return _textOnPopupWithCity.Displayed == false;
-            //return _textOnPopupWithCity.Size == 0; 
+            ReadOnlyCollection<IWebElement> _textOnPopupWithCity = FindElementSByXPath("//section[1]/div[contains(@class,'navigation_right')]/..//div[contains(@class,'location tooltip')]/..//div[contains(@class,'message') and contains(.,'Ваш город')]");
+
+            return _textOnPopupWithCity.Count == 0;
         }
 
         public void MouseHoverMenuPlacesButton()
@@ -78,7 +78,5 @@ namespace HW11_Selenium_XPath
             //Action build = action.build();
             //build.perform();
         }
-
-
     }
 }
